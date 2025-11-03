@@ -4,54 +4,435 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <title>index</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
 
-    <h1 class="index-title">我是首頁</h1>
+    <div class="homePage">
+    <!-- header -->
+      <section class="container">
+      <%- include('./layout/header'); -%>
+      </section>
 
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/dog.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
+      <div class="header-box"></div>
+
+
+    <!-- banner -->
+      <section class="container py-12">
+      <div class="position-relative mb-12">
+        <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/3ewLAKn.png?raw=true" alt="廣告圖">
+        <h2 class="position-absolute bottom-0 start-0 text-neutal-0 m-11 f-2 fw-normal">窩窩家居<span class="d-block">跟您一起品味生活</span></h2>
       </div>
-    </div>
 
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- 床墊優勢 -->
+      <div class="" id="advantage">
+        <h2 class="text-center fs-2 fw-medium mb-10">床墊優勢</h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="card border-0 w-100">
+              <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/tR426y5.png?raw=true" class="card-img-top mb-6" alt="原木">
+              <h5 class="text-center fs-4">原木料環保</h5>
+            </div>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+          <div class="col-4">
+            <div class="card border-0 w-100">
+              <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/Fd2MiBb.png?raw=true" class="card-img-top mb-6" alt="被子">
+              <h5 class="text-center fs-4">好收納</h5>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card border-0 w-100">
+              <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/5n1uTFh.png?raw=true" class="card-img-top mb-6" alt="組裝">
+              <h5 class="text-center fs-4">好組裝</h5>
+            </div>
           </div>
         </div>
       </div>
+      </section>
+
+
+    <!-- 家具比較 -->
+      <section class="bg-bgColor">
+      <div class="container py-12">
+        <h2 class="text-center fs-2 fw-medium mb-10">家具比較</h2>
+
+        <table class="table mx-auto" style="max-width: 636px;">
+          <thead >
+            <tr class="text-center mb-3">
+              <th scope="col"></th>
+              <th scope="col">窩窩系統模組家具</th>
+              <th class="text-neutal-600" scope="col">組合式家具</th>
+              <th class="text-neutal-600" scope="col">實木家具</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">可單人自行組裝</th>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+              <td  class="text-neutal-600 align-middle">不一定</td>
+              <td></td>
+
+            </tr>
+            <tr>
+              <th scope="row">可多次重複拆裝</th>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+              <td></td>
+              <td></td>
+
+
+            </tr>
+            <tr>
+              <th scope="row">床墊規格彈性大</th>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+              <td class="text-neutal-600 align-middle">不一定</td>
+              <td class="text-neutal-600 align-middle">不一定</td>
+            </tr>
+            <tr>
+              <th scope="row">小客車即可搬運</th>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+              <td></td>
+              <td></td>
+
+            </tr>
+            <tr>
+              <th scope="row">材質可長久使用</th>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+              <td></td>
+              <td><img src="/assets/images/icon-done.svg" style="width: 40px;" alt=""></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      </section>
+
+
+    <!-- 好評推薦 -->
+      <section id="recommend" class="bg-primary-400 py-12">
+        <div class="container ">
+          <h2 class="text-center fs-2 fw-medium mb-10 text-white">好評推薦</h2>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card rounded-0 border-0 mb-6 ms-107" style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/NiUXr6L.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/I9L7WOr.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">王六角</h5>
+                          <p class="text-accent fs-9">Jodan 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">CP值很高。</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card rounded-0 border-0 " style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/BefHmH2.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/W7fyzp2.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">小杰</h5>
+                          <p class="text-accent fs-9">Louvre 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">非常舒適，有需要會再回購</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card rounded-0 border-0 mb-6 " style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/BefHmH2.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/CUFGfay.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">Leaf</h5>
+                          <p class="text-accent fs-9">Antony 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">很喜歡～還有送三年保固～</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card rounded-0 border-0 ms-x-107" style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/eCaHhpW.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/8O1cOnG.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">江八角</h5>
+                          <p class="text-accent fs-9">Charles 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">品質不錯～</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card rounded-0 border-0 mb-6 " style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/G73FRuT.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/8WwZsLS.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">美濃鄧子琪</h5>
+                          <p class="text-accent fs-9">Charles 系列儲物組合</p>
+                        </div>
+                      </div>
+                      <p class="card-text">廚房必備美用品</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card rounded-0 border-0 ms-x-107" style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/npA3DgP.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/C0NDvSA.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">juni讚神</h5>
+                          <p class="text-accent fs-9">Antony 床邊桌</p>
+                        </div>
+                      </div>
+                      <p class="card-text">讚ㄉ！</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card rounded-0 border-0 mb-6 " style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/C0aYlUQ.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/NycuPVy.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">isRaynotArray</h5>
+                          <p class="text-accent fs-9">Antony 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">物超所值!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card rounded-0 border-0 ms-x-107" style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/Ed7bxLr.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/I9L7WOr.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">久安說安安</h5>
+                          <p class="text-accent fs-9">Antony 單人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">一個躺剛剛好。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card rounded-0 border-0 mb-6 " style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/Ed7bxLr.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/I9L7WOr.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">程鮭魚</h5>
+                          <p class="text-accent fs-9">Louvre 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">租屋用剛剛好</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card rounded-0 border-0 ms-x-107" style=" height: 96px;">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 " style="width: 95px; height: 96px;">
+                      <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/eCaHhpW.png?raw=true" class="w-100 h-100"  alt="...">
+                    </div>
+                    <div class="col-md-8 p-3">
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                        <div style="width: 40px; " >
+                          <img src="https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/3ako6QX.png?raw=true"  alt="">
+                        </div>
+                        <div>
+                          <h5 class="">PeiQun</h5>
+                          <p class="text-accent fs-9">Antony 雙人床架</p>
+                        </div>
+                      </div>
+                      <p class="card-text">睡起來很舒適</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- 運送方式 -->
+      <section class="container py-12" id="shipping">
+        <h2 class="text-center fs-2 fw-medium mb-10 ">運送方式</h2>
+        <ul class="d-flex justify-content-center">
+          <li class="text-center">
+            <div class="mb-4 mx-auto" style="width: 115px;">
+              <img src="/assets/images/icon-step1.svg" alt="">
+            </div>
+            <h5 class="fs-5 fw-medium">STEP.1</h5>
+            <p>選購商品</p>
+          </li>
+          <li class="d-flex align-items-center p-8">
+            <div style="width: 40px;">
+              <img src="/assets/images/icon-right-arrow.svg" alt="">
+            </div>
+          </li>
+          <li class="text-center">
+            <div class="mb-4 mx-auto" style="width: 115px;">
+              <img src="/assets/images/icon-step2.svg" alt="">
+            </div>
+            <h5 class="fs-5 fw-medium">STEP.2</h5>
+            <p>填寫預定資料</p>
+          </li>
+          <li class="d-flex align-items-center p-8">
+            <div style="width: 40px;">
+              <img src="/assets/images/icon-right-arrow.svg" alt="">
+            </div>
+          </li>
+          <li class="text-center">
+            <div class="mb-4 mx-auto" style="width: 115px;">
+              <img src="/assets/images/icon-step3.svg" alt="">
+            </div>
+            <h5 class="fs-5 fw-medium">STEP.3</h5>
+            <p>預定成功</p>
+          </li>
+          <li class="d-flex align-items-center p-8">
+            <div style="width: 40px;">
+              <img src="/assets/images/icon-right-arrow.svg" alt="">
+            </div>
+          </li>
+          <li class="text-center">
+            <div class="mb-4 mx-auto" style="width: 115px;">
+              <img src="/assets/images/icon-step4.svg" alt="">
+            </div>
+            <h5 class="fs-5 fw-medium">STEP.4</h5>
+            <p>Email 付款資訊</p>
+          </li>
+
+        </ul>
+      </section>
+
+    <!-- 商品 -->
+      <section class="container py-12" id="order">
+
+        <div style="width: 306px;" class="mb-10">
+          <input type="text" placeholder="全部" class="w-100 py-2 px-3 rounded border border-neutal-400">
+        </div>
+
+        <div class="product-list">
+          <div class="row">
+            <div class="col-3">
+              <div class="card rounded-0 border-0 w-100 mb-10">
+                <div class="position-relative mb-3">
+                  <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/dp6gW6u5hkUxxCuNi8RjbfgufygamNzdVHWb15lHZTxqZQs0gdDunQBS7F6M3MdegcQmKfLLoxHGgV3kYunUF37DNn6coPH6NqzZwRfhbsmEblpJQLqXLg4yCqUwP3IE.png" class="" alt="...">
+                  <span class="new-tag">新品</span>
+                  <a href="#" class="btn btn-primary border-0 p-3 w-100  position-absolute bottom-0 start-50 translate-middle-x">加入購物車</a>
+                </div>
+                
+                
+                <div class="">
+                  <h4 class="fs-5">Antony 雙人床架／雙人加大</h4>
+                  <p class="fs-5"><del>NT$18,000</del></p>
+                  <h5 class="fs-4 fw-normal">NT$12,000</h5>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
     </div>
+    
 
-    <%- include('./layout/footer'); -%>
 
+    
+
+
+
+
+    
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto", 
+        spaceBetween: 24,      
+        freeMode: true,        
+        grabCursor: true,      
+      });
+  </script>
   </body>
 </html>
+
+
+
+<!-- 床墊優勢	advantage
+好評推薦	recommend
+運送方式	shipping
+立即預定	order -->

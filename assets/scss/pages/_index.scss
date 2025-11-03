@@ -1,3 +1,52 @@
-.index-title {
-  font-size: 100px;
+
+
+
+.homePage{
+    .header-box{
+        height: 40px;
+        background-color: $black;
+    }
+
+    thead th{
+        font-size: 20px;
+        font-weight: normal;
+    }
+    tbody {
+        th{
+            font-size: 24px;
+            font-weight: normal;
+        }
+        td{
+            text-align: center;
+        }
+    }
+
+    .table{
+        --bs-table-bg: none;
+    }
 }
+
+.card {
+    width: 343px; 
+}
+
+.swiper-slide {
+    width: auto !important; 
+}
+
+.btn-primary:hover{
+    background-color: $accent;
+}
+
+.new-tag{
+    background-color: $black;
+    padding: 8px 24px;
+    position: absolute;
+    top:12px;
+    right:-5px;
+    color: $white;
+
+}
+
+
+
