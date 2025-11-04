@@ -21,9 +21,16 @@
         }
     }
 
+    input::placeholder {
+        color: #9ea6ad; 
+
+    }
+
     .table{
         --bs-table-bg: none;
+        --bs-table-border-color: transparent;
     }
+
 }
 
 .card {
@@ -35,7 +42,7 @@
 }
 
 .btn-primary:hover{
-    background-color: $accent;
+    background-color: #301E5F;
 }
 
 .new-tag{
@@ -46,6 +53,11 @@
     right:-5px;
     color: $white;
 
+}
+
+.alert-msg{
+    bottom:10px;
+    right: -60px;
 }
 
 
