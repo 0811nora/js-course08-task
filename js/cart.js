@@ -146,6 +146,8 @@ function allCartList(){
 }
 
 
+
+
 // ----- ［渲染］購物車中的資料 -----
 function renderCartList(item){
     return `
@@ -230,12 +232,10 @@ function deleteBtn(){
 function deleteAllBtn(){
     const deleteAllBtn = document.querySelector('.deleteAllBtn');
 
-    deleteAllBtn.addEventListener('click',(e)=>{
+    deleteAllBtn.addEventListener('click',()=>{
         deleteAllProduct();
     })
 }
-
-
 
 
 // ---- [API:delete] - 刪除購物車中的單項商品 -----
@@ -263,6 +263,11 @@ function deleteAllProduct(){
 // 點擊 [送出預訂資料] 觸發
 submitBtn.addEventListener('click',(e)=>{
     e.preventDefault();
+    if(cartsData.length === 0){
+        emptyCart();
+        return;
+    }
+
     if(verify()){
         orderInfor();
         apiOrders();
@@ -326,6 +331,15 @@ function delAllSuccess(){
         title: '購物車商品已全部刪除',
         position: 'bottomLeft',
         color: 'green',
+    });
+}
+
+// ---- ［通知］購物車無商品，卻按下預訂 -----
+function emptyCart(){
+    iziToast.show({
+        title: '購物車無任何商品，請先選購商品。',
+        position: 'bottomLeft',
+        color: 'red',
     });
 }
 
