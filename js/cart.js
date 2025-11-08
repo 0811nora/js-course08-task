@@ -125,6 +125,7 @@ function getCartList(){
             }else{
                 allCartList();
                 deleteBtn();
+                deleteAllBtn();
             }
         })
 }
@@ -133,11 +134,15 @@ function getCartList(){
 // ---- ［顯示］購物車的所有商品顯示到畫面上 ----
 function allCartList(){
     let str = ``;
+    let totalPrice = 0
     cartsData.forEach((item,index)=>{
         str += renderCartList(item,index);
-        
+        totalPrice += item.product.price;
     })
+
+    str += renderTablelast(totalPrice.toLocaleString());
     cartList.innerHTML = str;
+
 }
 
 
@@ -154,7 +159,7 @@ function renderCartList(item){
             <td class="align-middle fs-5">NT$${item.product.price.toLocaleString()}</td>
             <td class="align-middle fs-5">1</td>
             <td class="align-middle fs-5">NT$${item.product.price.toLocaleString()}</td>
-            <td class="align-middle fs-5">
+            <td class="align-middle text-end">
                 <button class="btn" id="deleteBtn" data-id=${item.id}>
                     <img src="${iconDel}" alt="">
                 </button>
@@ -163,6 +168,22 @@ function renderCartList(item){
     `
 }
 
+
+// ----- ［渲染］購物車的總金額及刪除鈕 -----
+function renderTablelast(price){
+    return`
+        <tr>
+            <td>
+            <div class="text-start py-3">
+                <button class="btn btn-outline-primary deleteAllBtn"> 刪除全部商品</button>
+            </div>
+            </td>
+            <td></td>
+            
+            <td colspan="4" class="py-3 text-end align-middle fs-3 fw-medium"><span class="fs-5 me-6">總金額</span> NT$${price}</td>
+        </tr>
+    `
+}
 
 // ----- ［渲染］購物車無資料時顯示 -----
 function renderemptyCart(){
@@ -175,6 +196,7 @@ function renderemptyCart(){
 }
 
 
+// ----- 搜尋商品時觸發 -----
 searchBar.addEventListener('input',(e)=>{
 
     let txt = e.target.value;
@@ -190,7 +212,7 @@ searchBar.addEventListener('input',(e)=>{
 })
 
 
-// 點擊 [刪除鈕] 觸發
+// 點擊 [刪除鈕-單] 觸發
 function deleteBtn(){
     const deleteBtn = document.querySelectorAll('#deleteBtn');
 
@@ -204,6 +226,17 @@ function deleteBtn(){
     })
 }
 
+// 點擊 [刪除鈕-單] 觸發
+function deleteAllBtn(){
+    const deleteAllBtn = document.querySelector('.deleteAllBtn');
+
+    deleteAllBtn.addEventListener('click',(e)=>{
+        deleteAllProduct();
+    })
+}
+
+
+
 
 // ---- [API:delete] - 刪除購物車中的單項商品 -----
 function deleteProduct(id){
@@ -214,6 +247,17 @@ function deleteProduct(id){
         .catch(err => console.log(err))
 }
 
+// ---- [API:delete] - 刪除購物車中的全部商品 -----
+
+function deleteAllProduct(){
+    axios.delete(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`)
+        .then(()=>{
+            getCartList();
+            delAllSuccess();
+
+        })
+        .catch(err => console.log(err))
+}
 
 
 // 點擊 [送出預訂資料] 觸發
@@ -275,3 +319,13 @@ function orderSuccess(){
         color: 'green',
     });
 }
+
+// ---- ［通知］購物車全部刪除成功的通知 -----
+function delAllSuccess(){
+    iziToast.show({
+        title: '購物車商品已全部刪除',
+        position: 'bottomLeft',
+        color: 'green',
+    });
+}
+
