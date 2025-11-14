@@ -271,8 +271,7 @@ submitBtn.addEventListener('click',(e)=>{
     if(verify()){
         orderInfor();
         apiOrders();
-        userForm.reset();
-        orderSuccess();
+        
     }
 
 })
@@ -284,6 +283,8 @@ function apiOrders(){
         .then((res)=>{
             orderDetail = {"data": {"user": {}}}
             getCartList();
+            userForm.reset();
+            orderSuccess();
             
         })
         .catch((err)=>{console.log(err)})
